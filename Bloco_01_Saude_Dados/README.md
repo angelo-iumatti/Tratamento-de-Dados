@@ -1,18 +1,21 @@
 # Bloco 01 – Saúde dos Dados 🩺
 
-## Objetivo
-Garantir consistência antes da carga dos arquivos operacionais (OP01‑OP17) recebidos pela GIO.
+### Objetivo
+Validar consistência dos arquivos operacionais (OP01‑OP17) que alimentam os painéis da GIO / Arsae‑MG.
 
-## Passo a passo
-1. **Gerar dados‑teste** …  
-2. **Rodar `validation.py`** …  
-3. **Registrar erros em `Checklist_Validação.xlsx`** …
+### Passo a passo
+1. Gerar arquivo‑teste **OP01_202506.csv** (15 linhas, erros intencionais).  
+2. Executar `validation.py` → cria **erros_validacao.csv** com detalhes.  
+3. Registrar inconsistências na aba **Log** de `Checklist_Validação.xlsx`.  
+4. Corrigir o CSV e repetir até obter relatório vazio.
 
-## Scripts
-- `validation.py` – valida nulos, duplicatas e regras de negócio.
+### Scripts
+| Arquivo | Função |
+|---------|--------|
+| `validation.py` | Checa nulos, duplicatas, perda > 100 %, volume negativo |
 
-## Resultado
-`erros_validacao.csv` vazio → dados prontos para ingestão.
+### Resultado
+Relatório vazio = arquivo pronto para ingestão (ETL).
 
-## Próximos passos
-Automatizar no Power Automate Desktop.
+### Próximos passos
+Automatizar execução no Power Automate Desktop e salvar logs no banco.
