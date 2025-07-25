@@ -34,4 +34,3 @@ print("Validação concluída! Veja erros_validacao.csv")
 
 # 4. Exportar DataFrame corrigido
 df.to_csv("OP01_202506_corrigido.csv", index=False)
-print("DataFrame corrigido exportado como OP01_202506_corrigido.csv")
